@@ -1,0 +1,103 @@
+.map-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: var(--bg-secondary);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-lg);
+  overflow: hidden;
+}
+
+.stadium-shape {
+  width: 80%;
+  height: 60%;
+  border-radius: 100px;
+  border: 4px solid var(--bg-tertiary);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.field {
+  width: 60%;
+  height: 40%;
+  border-radius: 50px;
+  border: 2px dashed rgba(255, 255, 255, 0.1);
+  background-color: rgba(16, 185, 129, 0.05); /* very faint green */
+}
+
+.marker {
+  position: absolute;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: var(--border-radius-round);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.marker .pulse {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: inherit;
+  opacity: 0.5;
+  animation: radar-pulse 2s infinite ease-out;
+  z-index: -1;
+}
+
+@keyframes radar-pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* Hardcoded positions for fake map */
+.marker-gate1 { top: -12px; left: 20%; color: white; }
+.marker-gate2 { bottom: -12px; right: 20%; color: white; }
+.marker-stall3 { top: 30%; right: -10px; color: white; }
+.marker-stall5 { bottom: 20%; left: -10px; color: white; }
+.marker-wc { top: 40%; left: 10%; color: white; }
+
+.map-legend {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  display: flex;
+  gap: var(--spacing-sm);
+  background: var(--glass-bg);
+  padding: 6px 12px;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(4px);
+}
+
+.legend-item {
+  font-size: 0.65rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-secondary);
+}
+
+.legend-item .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.map-insights {
+  display: flex;
+  flex-direction: column;
+}

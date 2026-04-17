@@ -1,0 +1,104 @@
+.chat-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: var(--spacing-sm);
+  /* remove bottom padding, let input area stick */
+  padding-bottom: 0;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-sm) 0 var(--spacing-md) 0;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.bot-avatar {
+  background-color: var(--bg-tertiary);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--border-radius-round);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-primary);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+}
+
+.chat-title {
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+.chat-status {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.chat-window {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-md) 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hide scrollbar for chat window */
+.chat-window::-webkit-scrollbar {
+  display: none;
+}
+
+.chat-input-area {
+  display: flex;
+  gap: var(--spacing-sm);
+  background-color: var(--bg-secondary);
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--glass-border);
+  margin-bottom: var(--spacing-md);
+}
+
+.chat-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  padding: 8px 12px;
+  font-size: 0.9375rem;
+  font-family: inherit;
+}
+
+.chat-input:focus {
+  outline: none;
+}
+
+.chat-input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.send-button {
+  background-color: var(--accent-primary);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--border-radius-round);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.send-button:disabled {
+  background-color: var(--bg-tertiary);
+  color: var(--text-tertiary);
+  cursor: not-allowed;
+}
+
+.send-button:not(:disabled):hover {
+  background-color: var(--accent-hover);
+  transform: scale(1.05);
+}
